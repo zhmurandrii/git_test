@@ -1,0 +1,31 @@
+1. User has a choice between rock, paper and scissors and wants to keep track of wins and loses:
+
+Create a variable of userChocie
+Create a variable of winCountUser
+Create a variable of winCountComputer
+
+2. User chooses ONE of these variants
+
+Store user's choce in userChoice variable
+
+3. Computer selects a random of these 3 variants
+
+Create a computerChoice variable
+Randomly select a varaint and store it in computerChoice variable
+
+4. Users choice(UC) and computer choice(CC) are getting compared
+5.
+IF UC is the same as CC -> it's a tie!, show a message "it's a tie"
+ELSE: one of these scenarios:
+
+6.
+If UC is scissors and CC is paper -> user wins, increment winCountUser by 1, show a message "you won!"
+ELSE -> computer wins, increment winCountComputer by 1, show a message "you lost!"
+
+7.
+If UC is rock and CC is scissors -> user wins, increment winCountUser by 1, show a message "you won!"
+ELSE -> computer wins, increment winCountComputer by 1, show a message "you lost!"
+
+8. 
+If UC is paper and CC is rock -> user wins, increment winCountUser by 1, show a message "you won!"
+ELSE -> computer wins, increment winCountComputer by 1, show a message "you lost!"
