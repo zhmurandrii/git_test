@@ -1,7 +1,18 @@
 let userChoice;
 let winCountUser = 0;
 let winCountComputer = 0;
-let computerChoice = getComputerChoice();
+let computerChoice;
+let gamesCount = 0;
+let winningVariant;
+let userVariant;
+
+function gameCheck() {
+  if (gamesCount >= 5) {
+    gameStop();
+  } else {
+    gameStart();
+  }
+}
 
 function gameStop() {
   if (winCountUser > winCountComputer) {
@@ -23,8 +34,10 @@ function getComputerChoice() {
     return "scissors";
   }
 }
+
 function gameStart() {
-  userChoice = prompt("Enter your choice: ");
+  userVariant = prompt("Enter your choice: ");
+  userChoice = userVariant.toLowerCase();
   if (
     userChoice === "rock" ||
     userChoice === "paper" ||
@@ -32,12 +45,15 @@ function gameStart() {
   ) {
     console.log(`User's choice is ${userChoice}`);
     getComputerChoice();
+    let computerChoice = getComputerChoice();
     console.log(`Computer choice is: ${computerChoice}`);
 
     if (userChoice === computerChoice) {
       console.log("It's a tie!");
-      alert(`Score is ${winCountUser}:${winCountComputer}`);
-      gameStart();
+      console.log("------------------------");
+      alert(`It's a tie! Score is ${winCountUser}:${winCountComputer}`);
+      gamesCount++;
+      gameCheck();
     } else {
       if (
         (userChoice === "scissors" && computerChoice === "paper") ||
@@ -46,19 +62,29 @@ function gameStart() {
       ) {
         winCountUser++;
         console.log(`You won!`);
-        alert(`You won! Score is ${winCountUser}:${winCountComputer}`);
-        gameStart();
+        console.log("------------------------");
+        winningVariant = userChoice.toUpperCase();
+        alert(
+          `You won! ${winningVariant} beats ${computerChoice}! Score is ${winCountUser}:${winCountComputer}`,
+        );
+        gamesCount++;
+        gameCheck();
       } else {
         winCountComputer++;
         console.log("You lost!");
-        alert(`You lost! Score is ${winCountUser}:${winCountComputer}`);
-        gameStart();
+        console.log("------------------------");
+        winningVariant = computerChoice.toUpperCase();
+        alert(
+          `You lost! ${userChoice} loses to ${winningVariant} Score is ${winCountUser}:${winCountComputer}`,
+        );
+        gamesCount++;
+        gameCheck();
       }
     }
   } else if (userChoice == null) {
     gameStop();
   } else {
-    gameStart();
+    gameCheck();
   }
 }
 
