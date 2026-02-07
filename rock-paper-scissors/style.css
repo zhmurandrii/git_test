@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+
+#container {
+  text-align: center;
+  width: 50%;
+  justify-self: center;
+  flex-direction: column;
+  height: 320px;
+}
+
+.choice-buttons {
+  padding: 12px;
+}
+
+.button {
+  border-radius: 12px;
+  border: 0;
+  padding: 8px;
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(154, 127, 93);
+  color: hsl(120, 19%, 50%);
+  color: hsl(0, 28%, 50%);
+}
